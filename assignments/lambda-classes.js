@@ -5,7 +5,7 @@ class Person {
         this.location = obj.location;
     }
     speak(){
-        console.log(`Hello, my name is ${this.name}. I am fomr ${this.location}!`)
+        console.log(`Hello, my name is ${this.name}. I am from ${this.location}!`)
     }
 } // Person
 
@@ -47,7 +47,7 @@ class Student extends Person{
     }
 } // Student instanceof Person
 
-class ProjectManager extends Intructor{
+class ProjectManager extends Instructor{
     constructor(obj){
         super(obj);
         this.gradClassName = obj.gradClassName;
@@ -65,7 +65,7 @@ class ProjectManager extends Intructor{
 
 // TEST OBJECTS
 
-const int1 = new Intructor({
+const int1 = new Instructor({
     name: "george",
     age: 22,
     gender: '?',
@@ -74,7 +74,7 @@ const int1 = new Intructor({
     catchPhrase: 'Jumping Beans!'
 });
 
-const int2 = new Intructor({
+const int2 = new Instructor({
     name: "jim",
     age: 44,
     gender: 'F',
@@ -83,7 +83,7 @@ const int2 = new Intructor({
     catchPhrase: 'Looking Beans!'
 });
 
-const int3 = new Intructor({
+const int3 = new Instructor({
     name: "tom",
     age: 71,
     gender: 'M',
@@ -95,6 +95,7 @@ const int3 = new Intructor({
 const stu1 = new Student({
     name: "exacto",
     age: 4,
+    location: 'Craft room',
     gender: '?',
     favLanguage: 'babble',
     specialty: 'not walking',
@@ -145,3 +146,11 @@ const pm3 = new ProjectManager({
     specialty: 'Water Temple',
     catchPhrase: 'Do not hit those chickens!'
 });
+
+// TEST STATEMENTS
+
+console.log(stu1.speak());
+console.log(pm2.debugCode(stu3, 'Advanced CSS'));
+console.log(int3.grade(stu1, 'Science'));
+console.log(pm3.standup('web19_help'));
+console.log(stu3.sprintChallenge('Javascript'));
