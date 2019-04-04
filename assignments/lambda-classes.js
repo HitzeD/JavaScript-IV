@@ -1,10 +1,12 @@
 // Stretch Addition
-function gradePapers(int2, stu3){
+function gradePapers(obj1, obj2){
     do{
-        int2.grading(stu3);
+        
+        obj1.grading(obj2);
+        console.log(obj2.grade);
     }
-    while(stu3.grade < 70);
-    return stu3.graduate();
+    while(obj2.grade < 70);
+    return obj2.graduate();
 };
 
 // Main Assignment
@@ -37,14 +39,13 @@ class Instructor extends Person {
     }
 
     grading(obj){
-        if((Math.floor(Math.random() * 10) * Math.floor(Math.random() * 10)) < 20){
+        if((Math.floor(Math.random() * 11)) < 7){
             obj.grade -= 10;
             return obj.grade;
         } else {
             obj.grade += 20;
             return obj.grade;
         }
-        //(Math.random() * 10)
     }
 } // Instructor instanceof Person
 
@@ -137,7 +138,7 @@ const stu1 = new Student({
 const stu2 = new Student({
     name: "sun",
     age: 2,
-    grade: 90,
+    grade: 0,
     gender: 'F',
     favLanguage: 'c++',
     specialty: 'engineer',
@@ -184,15 +185,15 @@ const pm3 = new ProjectManager({
 
 // TEST STATEMENTS
 
-stu1.speak();
-pm2.debugCode(stu3, 'Advanced CSS');
-int3.grade(stu1, 'Science');
-pm3.standup('web19_help');
-stu3.sprintChallenge('Javascript');
-console.log(stu2.grade);
-console.log(int2.grading(stu2));
-stu3.graduate();
-console.log(stu3.grade);
-int2.grading(stu3);
-console.log(stu3.grade);
+// stu1.speak();
+// pm2.debugCode(stu3, 'Advanced CSS');
+// int3.grade(stu1, 'Science');
+// pm3.standup('web19_help');
+// stu3.sprintChallenge('Javascript');
+// console.log(stu2.grade);
+// console.log(int2.grading(stu2));
+// stu3.graduate();
+// console.log(stu2.grade);
+// int2.grading(stu3);
+// console.log(stu2.grade);
 gradePapers(int2, stu3);
