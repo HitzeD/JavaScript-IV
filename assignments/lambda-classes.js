@@ -1,3 +1,14 @@
+// Stretch Addition
+function gradePapers(int2, stu3){
+    do{
+        int2.grading(stu3);
+    }
+    while(stu3.grade < 70);
+    return stu3.graduate();
+};
+
+// Main Assignment
+
 class Person {
     constructor(obj){
         this.name = obj.name;
@@ -24,6 +35,17 @@ class Instructor extends Person {
     grade(student, subject){
         console.log(`${student.name} receives a perfect score on ${subject}!`)
     }
+
+    grading(obj){
+        if((Math.floor(Math.random() * 10) * Math.floor(Math.random() * 10)) < 20){
+            obj.grade -= 10;
+            return obj.grade;
+        } else {
+            obj.grade += 20;
+            return obj.grade;
+        }
+        //(Math.random() * 10)
+    }
 } // Instructor instanceof Person
 
 class Student extends Person{
@@ -32,6 +54,7 @@ class Student extends Person{
         this.previousBackground = obj.previousBackground;
         this.className = obj.className;
         this.favSubjects = obj.favSubjects;
+        this.grade = obj.grade;
     }
 
     listsSubjects(){
@@ -44,6 +67,14 @@ class Student extends Person{
 
     sprintChallenge(subject){
         console.log(`${this.name} has begun sprint challenge on ${subject}.`);
+    }
+
+    graduate(){
+        if(this.grade > 70){
+            console.log(`Congrats, ${this.name}, you have finished ${this.specialty}!`);
+        } else {
+            console.log(`We're sorry ${this.name}, but you have not passed ${this.specialty} until you have a 70%!`);
+        }
     }
 } // Student instanceof Person
 
@@ -95,16 +126,18 @@ const int3 = new Instructor({
 const stu1 = new Student({
     name: "exacto",
     age: 4,
+    grade: (Math.floor(Math.random() * 10) * Math.floor(Math.random() * 10)),
     location: 'Craft room',
     gender: '?',
     favLanguage: 'babble',
     specialty: 'not walking',
     catchPhrase: 'Touch?'
-});
+}); // random generate grade!!!
 
 const stu2 = new Student({
     name: "sun",
     age: 2,
+    grade: 90,
     gender: 'F',
     favLanguage: 'c++',
     specialty: 'engineer',
@@ -114,6 +147,8 @@ const stu2 = new Student({
 const stu3 = new Student({
     name: "moon",
     age: 1,
+    grade: 69,
+    specialty: 'Ergonomics',
     gender: '?',
     favLanguage: 'Django',
     specialty: 'software',
@@ -154,3 +189,10 @@ pm2.debugCode(stu3, 'Advanced CSS');
 int3.grade(stu1, 'Science');
 pm3.standup('web19_help');
 stu3.sprintChallenge('Javascript');
+console.log(stu2.grade);
+console.log(int2.grading(stu2));
+stu3.graduate();
+console.log(stu3.grade);
+int2.grading(stu3);
+console.log(stu3.grade);
+gradePapers(int2, stu3);
