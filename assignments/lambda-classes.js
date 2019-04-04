@@ -149,8 +149,8 @@ const pm3 = new ProjectManager({
 
 // TEST STATEMENTS
 
-console.log(stu1.speak());
-console.log(pm2.debugCode(stu3, 'Advanced CSS'));
-console.log(int3.grade(stu1, 'Science'));
-console.log(pm3.standup('web19_help'));
-console.log(stu3.sprintChallenge('Javascript'));
+stu1.speak();
+pm2.debugCode(stu3, 'Advanced CSS');
+int3.grade(stu1, 'Science');
+pm3.standup('web19_help');
+stu3.sprintChallenge('Javascript');
